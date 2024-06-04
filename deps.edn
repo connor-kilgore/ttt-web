@@ -1,0 +1,13 @@
+{:paths   ["src"]
+ :deps    {org.clojure/clojure     {:mvn/version "1.10.3"}
+           tic-tac-toe/tic-tac-toe {:git/url "git@github.com:connor-kilgore/tic-tac-toe.git"
+                                    :git/sha "67fa62f538e57760e2c662630ff9d61edc83e2b1"}
+           HTTP_Server/HTTP_Server {:local/root "resources/HTTP_Server.jar"}
+           speclj/speclj           {:mvn/version "3.4.6"}
+           hiccup/hiccup {:mvn/version "2.0.0-RC3"}}
+ :aliases {:test {:extra-deps  {speclj/speclj {:mvn/version "3.4.6"}}
+                  :extra-paths ["spec"]}
+           :spec {:main-opts ["-m" "speclj.main" "-c"]}
+           :run  {:main-opts ["-m" "ttt-web.core"]}}
+
+ }
